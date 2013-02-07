@@ -205,7 +205,7 @@ public class SolrCoreLoader
 
     public static SolrProxy loadEmbeddedCore(String solrCoreDir, String solrDataDir, String solrCoreName, boolean useBinaryRequestHandler, Logger logger)
     {
-    	logger.info("solrCoreDir: " + solrCoreDir +";solrDataDir: " + solrDataDir +";solrCoreName: " + solrCoreName + ";useBinaryRequestHandler: " + useBinaryRequestHandler);
+    	logger.info("ZDB: solrCoreDir: " + solrCoreDir +";solrDataDir: " + solrDataDir +";solrCoreName: " + solrCoreName + ";useBinaryRequestHandler: " + useBinaryRequestHandler);
     	try
         {
             // create solrCoreObject and coreContainerObj
@@ -238,7 +238,7 @@ public class SolrCoreLoader
                 }
             else  // non-multicore Solr 1.3 installation 
             {
-            	logger.info("Used non-multicore");
+            	logger.info("ZDB: Used non-multicore");
                 if (solrDataDir == null) 
                 {
                     solrDataDir = solrCoreDir + "/" + "data";
@@ -297,7 +297,7 @@ public class SolrCoreLoader
                     Class<?> embeddedSolrServerClass = Class.forName("org.solrmarc.solr.embedded.SolrServerEmbeddedImpl");
                     Constructor<?> embeddedSolrServerConstructor = embeddedSolrServerClass.getConstructor(Object.class, Object.class);
                     solrServerObj = embeddedSolrServerConstructor.newInstance(solrCoreObj, coreContainerObj);
-                    logger.info("Used non acient solrj version");
+                    logger.info("ZDB: Used non acient solrj version");
                 }
                 else
                 {
