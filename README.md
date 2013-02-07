@@ -45,4 +45,4 @@ Since the API of Solr changed, we had to make some adjustments in the SolrMarc s
 * SolrCoreLoader.java method loadRemoteSolrServer: no try/catch anymore.
 * SolrCoreLoader.java method loadEmbeddedCore: error when using useBinaryRequestHandler = true
 * use org.solrmarc.index.VufindIndexer instead of org.solrmarc.index.SolrIndexer
-* verfify https://github.com/solrmarc/stanford-solr-marc/blob/master/stanford-sw/sw_config.properties "2012-08 streaming updates silently fail w unknown number of unindexed records" 
+* verify https://github.com/solrmarc/stanford-solr-marc/blob/master/stanford-sw/sw_config.properties "2012-08 streaming updates silently fail w unknown number of unindexed records" 
