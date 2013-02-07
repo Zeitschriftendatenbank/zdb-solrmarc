@@ -1,0 +1,20 @@
+//---- file starts here
+import org.marc4j.marc.Record;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.solrmarc.tools.Utils;
+
+org.solrmarc.index.SolrIndexer indexer = null;
+
+public String getDateUpdated(Record record)
+{
+    String field005 = indexer.getFirstFieldVal(record, "005[0-11]");
+    if (field005 == null) return(null);
+    SimpleDateFormat input = new SimpleDateFormat("yyyyMMddHHmm");
+    SimpleDateFormat output = new SimpleDateFormat("MMMMM d, yyyy  h:mm aaa");
+    Date date = input.parse(field005);
+    String dateoutput = (date != null) ? output.format(date) : null;
+    return(dateoutput);
+}
+//---- file ends here
